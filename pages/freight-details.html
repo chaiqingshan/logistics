@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <link rel="import" href="./common/header.html?__inline">
+    <link rel="stylesheet" type="text/css" href="/static/css/freight-details.css">
+    <title>货运信息详情</title>
+</head>
+
+<body>
+    <link rel="import" href="./common/nav.html?__inline">
+    <div class="container biao">
+        <h3>货运信息详情</h3>
+        <div class="det">
+            <ul class="row xiangqing" style=" background:#f5f5f5">
+                <li class="tit_hover col-lg-3 col-md-3 col-sm-3" style="width:25%" id="huo1" onclick="setTab2('huo',1,4)">货源信息</li>
+                <li class="col-lg-3 col-md-3 col-sm-3" id="huo2" style="width:25%" onclick="setTab2('huo',2,4)">我的货源</li>
+                <li class="col-lg-3 col-md-3 col-sm-3" id="huo3" style="width:25%" onclick="setTab2('huo',3,4)">车源信息</li>
+                <li class="col-lg-3 col-md-3 col-sm-3" id="huo4" style="width:25%" onclick="setTab2('huo',4,4)">我的车源</li>
+            </ul>
+            <!--货源信息-->
+            <div class="bill_left_text" id="list_huo1">
+                <div class="bill_chaxun">
+                    <form action="" method="post" class="form-horizontal bd">
+                        <div class="form-group row filt">
+                            <label class="col-md-1 control-label">起点</label>
+                            <div class="list_div area-wraper col-md-2">
+                                <input class="list_select form-control" autocomplete="off" id="search_begincity" name="search_begincity" placeholder="" type="text">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-md-1 control-label">终点</label>
+                            <div class="list_div area-wraper col-md-2">
+                                <input class="list_select form-control" autocomplete="off" id="search_endcity" name="search_endcity" placeholder="" type="text">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-md-1 control-label">车辆类型</label>
+                            <div class="list_div col-md-1">
+                                <select name="cartype" id="cartype" class="list_type form-control" style="padding-left:0;">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="高栏车">高栏车</option>
+                                    <option value="标箱车">标箱车</option>
+                                    <option value="平板车">平板车</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <label class="col-md-1 control-label">车辆高度</label>
+                            <div class="list_div col-md-2">
+                                <select name="carlength" id="carlength" class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="零担">零担</option>
+                                    <option value="4.2米以下">4.2米以下</option>
+                                    <option value="4.2米">4.2米</option>
+                                    <option value="4.2米~6.8米">4.2米~6.8米</option>
+                                    <option value="6.8米~9.6米">6.8米~9.6米</option>
+                                    <option value="9.6米">9.6米</option>
+                                    <option value="9.6米~13米">9.6米~13米</option>
+                                    <option value="13米">13米</option>
+                                    <option value="13米~17.5米">13米~17.5米</option>
+                                    <option value="17.5米">17.5米</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1" style="float:right">
+                                <input class="btn btn-info form-control" type="submit" value="查询">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="hy_right_top">
+                    <p>货源信息</p>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0; width:100%">
+                    <thead>
+                        <tr style="background-color:#ebebeb">
+                            <td>货主姓名</td>
+                            <td>运输路线</td>
+                            <td>货物描述</td>
+                            <td>意向价格</td>
+                            <td>车辆类型</td>
+                            <td>车辆长度</td>
+                            <td>发布时间</td>
+                            <td>状态</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>柴青山</td>
+                            <td>
+                                <span>起点：</span>山西省-运城市
+                                <br><span>终点：</span>广东省-东莞市-市辖区
+                            </td>
+                            <td>小钢卷</td>
+                            <td>价格面议</td>
+                            <td>高栏车</td>
+                            <td>4.2米</td>
+                            <td>9秒前</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    重量:
+                                    <span>5吨</span>
+                                    <br> 车辆数量：
+                                    <span>3</span>
+                                    <br> 运费：
+                                    <span>6000</span>
+                                    <br> 发货电话：
+                                    <span>15225033124</span>
+                                    <br> 取货电话：
+                                    <span>空</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>柴青山</td>
+                            <td>
+                                <span>起点：</span>山西省-运城市
+                                <br><span>终点：</span>广东省-东莞市-市辖区
+                            </td>
+                            <td>小钢卷</td>
+                            <td>价格面议</td>
+                            <td>高栏车</td>
+                            <td>4.2米</td>
+                            <td>9秒前</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    重量:
+                                    <span>5吨</span>
+                                    <br> 车辆数量：
+                                    <span>3</span>
+                                    <br> 运费：
+                                    <span>6000</span>
+                                    <br> 发货电话：
+                                    <span>15225033124</span>
+                                    <br> 取货电话：
+                                    <span>空</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--我的货源-->
+            <div class="bill_left_text" id="list_huo2" style="display:none;">
+                <div class="hy_right_top">
+                    <p>我的货源</p>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0;">
+                    <thead>
+                        <tr>
+                            <td style=" background-color:#ebebeb">出发地</td>
+                            <td style=" background-color:#ebebeb">到达地</td>
+                            <td style=" background-color:#ebebeb">货物描述</td>
+                            <td style=" background-color:#ebebeb">意向价格</td>
+                            <td style=" background-color:#ebebeb">发布时间</td>
+                            <td style=" background-color:#ebebeb">状态</td>
+                            <td style=" background-color:#ebebeb">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>山东省-济宁市-邹城市</td>
+                            <td> 浙江省-湖州市-全市</td>
+                            <td>小钢卷</td>
+                            <td>价格面议</td>
+                            <td>2016-01-11 00:00:00</td>
+                            <td>
+                                <a href="" style="display:none">正常</a>
+                                <a href="">过期</a>
+                            </td>
+                            <td>
+                                <a href="">[删除]</a>
+                                <a href="">[重发]</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>山东省-济宁市-邹城市</td>
+                            <td> 浙江省-湖州市-全市</td>
+                            <td>小钢卷</td>
+                            <td>价格面议</td>
+                            <td>2016-01-11 00:00:00</td>
+                            <td>
+                                <a href="">正常</a>
+                                <a href="" style="display:none">过期</a>
+                            </td>
+                            <td>
+                                <a href="">[删除]</a>
+                                <a href="">[重发]</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--车源信息-->
+            <div class="bill_left_text" id="list_huo3" style="display:none">
+                <div class="bill_chaxun">
+                    <form action="" method="post" class="form-horizontal bd">
+                        <div class="form-group row filt">
+                            <label class="col-md-1 control-label">起点</label>
+                            <div class="list_div area-wraper col-md-2">
+                                <input class="list_select form-control" autocomplete="off" id="search_begincity" name="search_begincity" placeholder="" type="text">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-md-1 area-wraper control-label">终点</label>
+                            <div class="list_div col-md-2">
+                                <input class="list_select form-control" autocomplete="off" id="search_endcity" name="search_endcity" placeholder="" type="text">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-md-1 control-label">车辆类型</label>
+                            <div class="list_div col-md-1">
+                                <select name="cartype" id="cartype" class="list_type form-control" style="padding-left:0;">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="高栏车">高栏车</option>
+                                    <option value="标箱车">标箱车</option>
+                                    <option value="平板车">平板车</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <label class="col-md-1 control-label">车辆高度</label>
+                            <div class="list_div col-md-2">
+                                <select name="carlength" id="carlength" class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="零担">零担</option>
+                                    <option value="4.2米以下">4.2米以下</option>
+                                    <option value="4.2米">4.2米</option>
+                                    <option value="4.2米~6.8米">4.2米~6.8米</option>
+                                    <option value="6.8米~9.6米">6.8米~9.6米</option>
+                                    <option value="9.6米">9.6米</option>
+                                    <option value="9.6米~13米">9.6米~13米</option>
+                                    <option value="13米">13米</option>
+                                    <option value="13米~17.5米">13米~17.5米</option>
+                                    <option value="17.5米">17.5米</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1" style="float:right">
+                                <input class="btn btn-info form-control" type="submit" value="查询">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0;">
+                    <thead>
+                        <tr style="background-color:#ebebeb">
+                            <td>车主信息</td>
+                            <td>运输路线</td>
+                            <td>重量/体积</td>
+                            <td>车辆数量</td>
+                            <td>车辆类型</td>
+                            <td>车辆长度</td>
+                            <td>发车时间</td>
+                            <td>状态</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>柴青山</td>
+                            <td><span>起点：</span>山西省-运城市
+                                <br><span>终点：</span>广东省-东莞市-市辖区</td>
+                            <td>30吨</td>
+                            <td>20辆</td>
+                            <td>高栏车</td>
+                            <td>4.2米</td>
+                            <td>2016-11-03 00:00</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>柴青山</td>
+                            <td><span>起点：</span>山西省-运城市
+                                <br><span>终点：</span>广东省-东莞市-市辖区</td>
+                            <td>30吨</td>
+                            <td>20辆</td>
+                            <td>高栏车</td>
+                            <td>4.2米</td>
+                            <td>2016-11-03 00:00</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>柴青山</td>
+                            <td><span>起点：</span>山西省-运城市
+                                <br><span>终点：</span>广东省-东莞市-市辖区</td>
+                            <td>30吨</td>
+                            <td>20辆</td>
+                            <td>高栏车</td>
+                            <td>4.2米</td>
+                            <td>2016-11-03 00:00</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>柴青山</td>
+                            <td><span>起点：</span>山西省-运城市
+                                <br><span>终点：</span>广东省-东莞市-市辖区</td>
+                            <td>30吨</td>
+                            <td>20辆</td>
+                            <td>高栏车</td>
+                            <td>4.2米</td>
+                            <td>2016-11-03 00:00</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--我的车源-->
+            <div class="bill_left_text" id="list_huo4" style="display:none;">
+                <div class="hy_right_top">
+                    <p>我的车源</p>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0;">
+                    <thead>
+                        <tr style=" background-color:#ebebeb">
+                            <td>运单号</td>
+                            <td>出发地</td>
+                            <td>到达地</td>
+                            <td>车辆描述</td>
+                            <td>车辆数量</td>
+                            <td>发车时间</td>
+                            <td>状态</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>245166525</td>
+                            <td>浙江省-湖州市-全市</td>
+                            <td>浙江省-湖州市-全市</td>
+                            <td>高栏车</td>
+                            <td>34辆</td>
+                            <td>2016-01-11 00:00:00</td>
+                            <td>
+                                <a href="" style="display:none">正常</a>
+                                <a href="">过期</a>
+                            </td>
+                            <td>
+                                <a href="">[删除]</a>
+                                <a href="">[重发]</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>245166525</td>
+                            <td>浙江省-湖州市-全市</td>
+                            <td>浙江省-湖州市-全市</td>
+                            <td>高栏车</td>
+                            <td>34辆</td>
+                            <td>2016-01-11 00:00:00</td>
+                            <td>
+                                <a href="">正常</a>
+                                <a href="" style="display:none">过期</a>
+                            </td>
+                            <td>
+                                <a href="">[删除]</a>
+                                <a href="">[重发]</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <link rel="import" href="./common/copy-right.html?__inline">
+    <link rel="import" href="./common/footer.html?__inline">
+    <!--底over-->
+    <!-- script for this page only -->
+    <script type="text/javascript" src="../static/js/freight-details.js"></script>
+    <script src="../lib/jquery_002_002.js" type="text/javascript"></script>
+    <script src="../lib/LocationRange.js" type="text/javascript"></script>
+    <script src="../lib/jquery_003.js" type="text/javascript"></script>
+    <script src="../lib/areaData1.js" type="text/javascript"></script>
+</body>
+
+</html>

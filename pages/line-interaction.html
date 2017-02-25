@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <link rel="import" href="./common/header.html?__inline">
+    <link rel="stylesheet" type="text/css" href="/static/css/line-interaction.css">
+    <title>行内信息发布</title>
+</head>
+
+<body>
+    <link rel="import" href="./common/nav.html?__inline">
+    <!-- 发布信息 -->
+    <div class="container biao">
+        <h3>发布信息</h3>
+        <div class="interaction">
+            <ul class="new_tab_ul row">
+                <li class="new_tab_f  hover col-lg-3 col-md-3 col-sm-3" id="one1" style=" background:#fff;" onclick="setTab('one',1,3)">
+                    <a href="javascript:;" style="color:#F5841C;">驾照分数</a>
+                </li>
+                <li class="new_tab_f col-lg-4 col-md-4 col-sm-4" id="one2" onclick="setTab('one',2,3)">
+                    <a href="javascript:;">车辆交易</a>
+                </li>
+                <li class="new_tab_f col-lg-4 col-md-4 col-sm-4" id="one3" onclick="setTab('one',3,3)">
+                    <a href="javascript:;">招聘信息</a>
+                </li>
+            </ul>
+            <div class="row">
+                <!--驾照分数-->
+                <div class="new_tab_div col-sm-12" id="list_one1">
+                    <form action="" method="post" class="bd">
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>姓名</label>
+                            <div class="list_div area-wraper col-sm-4 ">
+                                <input type="text" class="list_select form-control" placeholder="请输入您的姓名">
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>驾照类型</label>
+                            <div class="list_div col-sm-4 ">
+                                <select name="cartype" class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="A1">A1</option>
+                                    <option value="A2">A2</option>
+                                    <option value="A3">A3</option>
+                                    <option value="B1">B1</option>
+                                    <option value="B2">B2</option>
+                                    <option value="C1">C1</option>
+                                    <option value="C2">C2</option>
+                                    <option value="C3">C3</option>
+                                    <option value="C4">C4</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="M">M</option>
+                                    <option value="N">N</option>
+                                    <option value="P">P</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>所在城市</label>
+                            <div class="list_div area-wraper col-sm-4 ">
+                                <input autocomplete="off" type="text" id="endcity" name="endcity" class="list_select form-control" value="" placeholder="请输入所在城市">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>驾照分数</label>
+                            <div class="list_div col-sm-4 ">
+                                <select name="car_num" id="car_num" class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>联系电话</label>
+                            <div class="list_div col-sm-4">
+                                <input type="text" id="mobileno" class="list_select1 form-control" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <div class="new_tab_bottom form-group row">
+                            <input class="btn btn-info col-sm-1 col-sm-offset-8" type="submit" value="提交">
+                            <input class="btn btn-warning col-sm-1 col-sm-offset-1" type="reset" value="重置">
+                        </div>
+                    </form>
+                </div>
+                <!--车辆交易-->
+                <div class="new_tab_div col-sm-12" style=" display:none" id="list_one2">
+                    <form action="" method="post" class="bd">
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>我要</label>
+                            <div class="list_div col-sm-4">
+                                <select class="form-control">
+                                    <option value="买车" selected>买车</option>
+                                    <option value="卖车">卖车</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>车辆类型</label>
+                            <div class="list_div col-sm-4">
+                                <select class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="高栏车">高栏车</option>
+                                    <option value="标箱车">标箱车</option>
+                                    <option value="平板车">平板车</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>所在城市</label>
+                            <div class="list_div area-wraper col-sm-4">
+                                <input autocomplete="off" type="text" id="endcity" name="endcity" class="list_select form-control" value="" placeholder="请输入所在城市">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-sm-2 control-label">首次上牌时间</label>
+                            <div class="list_div list_div_last col-sm-4">
+                                <input placeholder="请输入日期" class="laydate-icon form-control" style="height:34px;" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>车辆长度</label>
+                            <div class="list_div col-sm-4">
+                                <select class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="4.2米以下">4.2米以下</option>
+                                    <option value="4.2米">4.2米</option>
+                                    <option value="4.2米~6.8米">4.2米~6.8米</option>
+                                    <option value="6.8米~9.6米">6.8米~9.6米</option>
+                                    <option value="9.6米">9.6米</option>
+                                    <option value="9.6米~13米">9.6米~13米</option>
+                                    <option value="13米">13米</option>
+                                    <option value="13米~17.5米">13米~17.5米</option>
+                                    <option value="17.5米">17.5米</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>联系电话</label>
+                            <div class="list_div col-sm-4">
+                                <input type="text" id="mobileno" class="list_select1 form-control" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>车辆描述</label>
+                            <div class="list_div col-sm-4">
+                                <textarea class="form-control" placeholder="例如：车辆何时购买，磨损情况，是否急需卖车或者买车等等"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label">上传车辆图片</label>
+                            <div id="preview" class="col-sm-3">
+                                <img id="imghead" border=0 class="img-responsive" src="../static/images/head_180.jpg" />
+                            </div>
+                            <input type="file" class="col-sm-2" onchange="previewImage(this)" />
+                        </div>
+                        <div class="new_tab_bottom form-group row">
+                            <input class=" btn btn-info col-sm-1 col-sm-offset-8" type="submit" value="提交">
+                            <input class=" btn btn-warning col-sm-1 col-sm-offset-1" type="reset" value="重置">
+                        </div>
+                    </form>
+                </div>
+                <!--招聘信息-->
+                <div class="new_tab_div col-sm-12" style="display:none" id="list_one3">
+                    <form action="" method="post" class="bd">
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>我要</label>
+                            <div class="list_div col-sm-4">
+                                <select class="form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="招聘">招聘</option>
+                                    <option value="应聘">应聘</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>岗位名称</label>
+                            <div class="list_div col-sm-4">
+                                <select class="list_type form-control">
+                                    <option value="司机" selected>司机</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label">公司名称</label>
+                            <div class="list_div list_div_last col-sm-4">
+                                <input type="text" class="list_select1 form-control" placeholder="请输入公司名称">
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>公司所在城市</label>
+                            <div class="list_div area-wraper col-sm-4">
+                                <input autocomplete="off" type="text" id="endcity" name="endcity" class="list_select form-control" placeholder="请输入所在城市">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label">薪资待遇</label>
+                            <div class="list_div col-sm-4">
+                                <select class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="面议">面议</option>
+                                    <option value="1000及以下">1000及以下</option>
+                                    <option value="1001~2000">1001~2000</option>
+                                    <option value="2001~3000">2001~3000</option>
+                                    <option value="3001~4000">3001~4000</option>
+                                    <option value="4001~5000">4001~5000</option>
+                                    <option value="5001~6000">5001~6000</option>
+                                    <option value="6001~7000">6001~7000</option>
+                                    <option value="7000以上">7000以上</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 control-label">年龄要求</label>
+                            <div class="list_div col-sm-4">
+                                <select class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="面议">面议</option>
+                                    <option value="20及以下">20及以下</option>
+                                    <option value="21~30">21~30</option>
+                                    <option value="31~40">31~40</option>
+                                    <option value="41~50">41~50</option>
+                                    <option value="51~60">51~60</option>
+                                    <option value="60以上">60以上</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>岗位要求</label>
+                            <div class="list_div col-sm-4">
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <label class="col-sm-2 control-label"><span>*&nbsp;</span>联系电话</label>
+                            <div class="list_div col-sm-4">
+                                <input type="text" id="mobileno" class="list_select1 form-control" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <div class="new_tab_bottom form-group row">
+                            <input class=" btn btn-info col-sm-1 col-sm-offset-8" type="submit" value="提交">
+                            <input class=" btn btn-warning col-sm-1 col-sm-offset-1" type="reset" value="重置">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container row">
+            <p style="text-align:right; color:red; margin-right:15px;">* 发布的信息只保留15天！</p>
+        </div>
+    </div>
+    <!-- 互动详情 -->
+    <div class="container biao">
+        <h3>互动详情</h3>
+        <div class="interaction">
+            <ul class="row xiangqing">
+                <li class="tit_hover col-lg-4 col-md-4 col-sm-4" id="huo1" onclick="setTab2('huo',1,3)">驾照分数</li>
+                <li class="col-lg-4 col-md-4 col-sm-4" id="huo2" onclick="setTab2('huo',2,3)">车辆交易</li>
+                <li class="col-lg-4 col-md-4 col-sm-4" id="huo3" onclick="setTab2('huo',3,3)">招聘信息</li>
+            </ul>
+            <!--驾照记分-->
+            <div class="bill_left_text" id="list_huo1">
+                <div class="bill_chaxun">
+                    <form action="" method="post" class="form-horizontal bd">
+                        <div class="form-group row filt">
+                            <label class="col-sm-2 col-xs-3 control-label">所在城市</label>
+                            <div class="col-sm-3 area-wraper col-xs-9">
+                                <input autocomplete="off" type="text" id="endcity" name="endcity" class="list_select form-control" value="" placeholder="请输入所在城市">
+                                <span style="display: none;" class="area-select area-tab">
+                            </span>
+                            </div>
+                            <label class="col-sm-2 col-xs-3 control-label">驾照类型</label>
+                            <div class="list_div col-sm-3 col-xs-9">
+                                <select name="cartype" class="list_type form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="A1">A1</option>
+                                    <option value="A2">A2</option>
+                                    <option value="A3">A3</option>
+                                    <option value="B1">B1</option>
+                                    <option value="B2">B2</option>
+                                    <option value="C1">C1</option>
+                                    <option value="C2">C2</option>
+                                    <option value="C3">C3</option>
+                                    <option value="C4">C4</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="M">M</option>
+                                    <option value="N">N</option>
+                                    <option value="P">P</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2" style="float:right">
+                                <input class="btn btn-info form-control" type="submit" value="查询">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0;">
+                    <thead>
+                        <tr style=" background-color:#ebebeb">
+                            <td>姓名</td>
+                            <td>驾照类型</td>
+                            <td>驾照分数</td>
+                            <td>所在城市</td>
+                            <td>状态</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>张三</td>
+                            <td>C1</td>
+                            <td>12</td>
+                            <td>郑州</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>张三</td>
+                            <td>C1</td>
+                            <td>12</td>
+                            <td>郑州</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>张三</td>
+                            <td>C1</td>
+                            <td>12</td>
+                            <td>郑州</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>张三</td>
+                            <td>C1</td>
+                            <td>12</td>
+                            <td>郑州</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--车辆交易-->
+            <div class="bill_left_text" id="list_huo2" style="display:none">
+                <div class="bill_chaxun">
+                    <form action="" method="post" class="form-horizontal bd">
+                        <div class="form-group row filt">
+                            <label class="col-md-1 col-sm-2 col-xs-3 control-label">我要</label>
+                            <div class="col-md-2 col-sm-4 col-xs-9">
+                                <select class="list_type form-control">
+                                    <option value="买车" selected>买车</option>
+                                    <option value="卖车">卖车</option>
+                                </select>
+                            </div>
+                            <label class="col-md-1 col-sm-2 col-xs-3 control-label">所在城市</label>
+                            <div class="col-md-3 col-sm-4 col-xs-9 area-wraper">
+                                <input autocomplete="off" type="text" id="begincity" name="beginendcity" class="list_select form-control" value="" placeholder="请输入所在城市">
+                                <span style="display: none;" class="area-select area-tab">
+                             </span>
+                            </div>
+                            <label class="col-md-1 col-sm-2 col-xs-3 control-label">车辆类型</label>
+                            <div class="col-md-2 col-sm-3 col-xs-9">
+                                <select class="form-control">
+                                    <option value="请选择" selected>请选择</option>
+                                    <option value="高栏车">高栏车</option>
+                                    <option value="标箱车">标箱车</option>
+                                    <option value="平板车">平板车</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 col-sm-2" style="float:right">
+                                <input class="btn btn-info form-control" type="submit" value="查询">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0;">
+                    <thead>
+                        <tr style="background-color:#ebebeb">
+                            <td>身份</td>
+                            <td>车辆类型</td>
+                            <td>车辆描述</td>
+                            <td>所在城市</td>
+                            <td>首次上牌</td>
+                            <td>车辆长度</td>
+                            <td>图片展示</td>
+                            <td>查看</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>卖车</td>
+                            <td>C1</td>
+                            <td>车辆描述车辆描述车辆描述车辆描述</td>
+                            <td>湖南省-娄底市-娄星区</td>
+                            <td>2016-11-03 00:00:00</td>
+                            <td>4.2米</td>
+                            <td><img src="../static/images/93ce5c4da31cd173.jpg" alt="车辆图片展示"></td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    联系电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>卖车</td>
+                            <td>C1</td>
+                            <td>车辆描述车辆描述车辆描述车辆描述</td>
+                            <td>湖南省-娄底市-娄星区</td>
+                            <td>2016-11-03 00:00:00</td>
+                            <td>4.2米</td>
+                            <td><img src="../static/images/93ce5c4da31cd173.jpg" alt="车辆图片展示"></td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    联系电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>卖车</td>
+                            <td>C1</td>
+                            <td>车辆描述车辆描述车辆描述车辆描述</td>
+                            <td>湖南省-娄底市-娄星区</td>
+                            <td>2016-11-03 00:00:00</td>
+                            <td>4.2米</td>
+                            <td><img src="../static/images/93ce5c4da31cd173.jpg" alt="车辆图片展示"></td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    联系电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>卖车</td>
+                            <td>C1</td>
+                            <td>车辆描述车辆描述车辆描述车辆描述</td>
+                            <td>湖南省-娄底市-娄星区</td>
+                            <td>2016-11-03 00:00:00</td>
+                            <td>4.2米</td>
+                            <td><img src="../static/images/93ce5c4da31cd173.jpg" alt="车辆图片展示"></td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    联系电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--招聘信息-->
+            <div class="bill_left_text" id="list_huo3" style="display:none">
+                <div class="bill_chaxun">
+                    <form action="" method="post" class="form-horizontal bd">
+                        <div class="form-group row filt">
+                            <label class="col-md-1 col-sm-2 col-xs-3 control-label">我要</label>
+                            <div class="col-md-2 col-sm-4 col-xs-9">
+                                <select class="list_type form-control">
+                                    <option value="招聘" selected>招聘</option>
+                                    <option value="应聘">应聘</option>
+                                </select>
+                            </div>
+                            <label class="col-md-1 col-sm-2 col-xs-3 control-label">岗位名称</label>
+                            <div class="col-md-2 col-sm-3 col-xs-9">
+                                <select class="form-control">
+                                    <option value="司机" selected>司机</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <label class="col-md-1 col-sm-2 col-xs-3 area-wraper control-label">所在城市</label>
+                            <div class="col-md-3 col-sm-4 col-xs-9">
+                                <input autocomplete="off" type="text" id="begincity" name="beginendcity" class="list_select form-control" placeholder="请输入所在城市">
+                                <span style="display: none;" class="area-select area-tab">
+                             </span>
+                            </div>
+                            <div class="col-md-1 col-sm-2" style="float:right">
+                                <input class="btn btn-info form-control" type="submit" value="查询">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table table-bordered" style="margin-bottom:0;">
+                    <thead>
+                        <tr style="background-color:#ebebeb">
+                            <td>身份</td>
+                            <td>岗位</td>
+                            <td>公司名称</td>
+                            <td>薪资待遇</td>
+                            <td>地址</td>
+                            <td>年龄范围</td>
+                            <td>岗位要求</td>
+                            <td>状态</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>招聘</td>
+                            <td>司机</td>
+                            <td>XXXXXXXX</td>
+                            <td>3000~4000</td>
+                            <td>北京市-海淀区</td>
+                            <td>41~50</td>
+                            <td>技术娴熟，没有出过交通事</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>招聘</td>
+                            <td>司机</td>
+                            <td>XXXXXXXX</td>
+                            <td>3000~4000</td>
+                            <td>北京市-海淀区</td>
+                            <td>41~50</td>
+                            <td>技术娴熟，没有出过交通事</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>招聘</td>
+                            <td>司机</td>
+                            <td>XXXXXXXX</td>
+                            <td>3000~4000</td>
+                            <td>北京市-海淀区</td>
+                            <td>41~50</td>
+                            <td>技术娴熟，没有出过交通事</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>招聘</td>
+                            <td>司机</td>
+                            <td>XXXXXXXX</td>
+                            <td>3000~4000</td>
+                            <td>北京市-海淀区</td>
+                            <td>41~50</td>
+                            <td>技术娴熟，没有出过交通事</td>
+                            <td class="yincang">
+                                <a style="color:red">查看</a>
+                                <div class="text" style="display:none">
+                                    发货电话：<span>15225033124</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--底over-->
+    <link rel="import" href="./common/copy-right.html?__inline">
+    <link rel="import" href="./common/footer.html?__inline">
+   <!-- script for this page only -->
+    <script type="text/javascript" src="../static/js/line-interaction.js"></script>
+    <script src="../lib/jquery_002_002.js" type="text/javascript"></script>
+    <script src="../lib/areaData1.js" type="text/javascript"></script>
+    <script src="../lib/LocationRange.js" type="text/javascript"></script>
+    <script src="../lib/jquery_003.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // 收缩展开效果
+    $(document).ready(function() {
+        $('.yincang').click(function() {
+            $(this).children('.text').slideToggle().parents('.yincang').siblings('.yincang').children('.text').hide();
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="import" href="./common/header.html?__inline">
+    <link rel="stylesheet" href="../static/css/login.css" />
+    <title>登录</title>
+
+    <body>
+        <div class="login-container">
+            <h1>会员登录</h1>
+            <form action="../php/login.php" method="post" id="loginForm">
+                <div>
+                    <input type="text" name="phone_number" class="phone_number" placeholder="输入手机号码" autocomplete="off" id="number" />
+                </div>
+                <div>
+                    <input type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" />
+                </div>
+                <div>
+                    <input type="text" placeholder="请输入验证码" style="width:150px; float:left"><img src="/static/images/code1.png" style="float:right; display:inline-block; margin-top:28px;">
+                </div>
+                <button id="submit" type="submit">登 陆</button>
+                <button type="reset" style="background:#F0AD4E;">重 置</button>
+            </form>
+            <a href="register.html">
+                <button type="button" class="register-tis">还没有账号？</button>
+            </a>
+        </div>
+        <link rel="import" href="./common/footer.html?__inline">
+        <!--背景图片自动更换-->
+        <script src="../lib/supersized.3.2.7.min.js"></script>
+        <script src="../lib/supersized-init.js"></script>
+        <!--表单验证-->
+        <script src="../lib/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../lib/validate.js"></script>
+    </body>
+
+</html>
